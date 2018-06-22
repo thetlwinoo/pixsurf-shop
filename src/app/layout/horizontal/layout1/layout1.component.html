@@ -1,0 +1,51 @@
+<div id="main" [ngClass]="{'boxed':pixsurfConfig.layout.width === 'boxed'}">
+
+  <!-- TOOLBAR: Above -->
+  <ng-container *ngIf="pixsurfConfig.layout.toolbar.position === 'above'">
+    <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+  </ng-container>
+  <!-- / TOOLBAR: Above -->
+
+  <!-- NAVBAR: Top -->
+  <ng-container>
+    <ng-container *ngTemplateOutlet="topNavbar"></ng-container>
+  </ng-container>
+  <!-- / NAVBAR: Top -->
+
+  <div id="container-1" class="container">
+
+    <!-- CONTENT -->
+    <content></content>
+    <!-- / CONTENT -->
+
+    <!-- FOOTER: Above -->
+    <ng-container *ngIf="pixsurfConfig.layout.footer.position === 'above-fixed'">
+      <ng-container *ngTemplateOutlet="footer"></ng-container>
+    </ng-container>
+    <!-- FOOTER: Above -->
+
+  </div>
+</div>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- @ PARTIALS
+<!-- ----------------------------------------------------------------------------------------------------- -->
+
+<!-- TOOLBAR -->
+<ng-template #toolbar>
+  <toolbar *ngIf="!pixsurfConfig.layout.toolbar.hidden" [ngClass]="[pixsurfConfig.layout.toolbar.position, pixsurfConfig.layout.toolbar.background]"></toolbar>
+</ng-template>
+<!-- / TOOLBAR -->
+
+<!-- FOOTER -->
+<ng-template #footer>
+  <footer *ngIf="!pixsurfConfig.layout.footer.hidden" [ngClass]="[pixsurfConfig.layout.footer.position, pixsurfConfig.layout.footer.background]"></footer>
+</ng-template>
+<!-- / FOOTER -->
+
+<!-- TOP NAVBAR -->
+<ng-template #topNavbar>
+  <navbar layout="horizontal" class="top-navbar" [ngClass]="pixsurfConfig.layout.navbar.background" fxHide fxShow.gt-md *ngIf="!pixsurfConfig.layout.navbar.hidden">
+  </navbar>
+</ng-template>
+<!-- / TOP NAVBAR -->
