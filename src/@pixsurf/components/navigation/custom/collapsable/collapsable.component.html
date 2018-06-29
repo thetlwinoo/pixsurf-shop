@@ -1,0 +1,14 @@
+<ng-container *ngIf="!item.hidden">
+  <div class="col-md-4 col-sm-3">
+    <div class="list-cat-mega-menu" *ngIf="item.children">
+      <h2 class="title-cat-mega-menu">{{ item.title }}</h2>
+      <ul>
+        <ng-container *ngFor="let item of item.children">
+          <pixsurf-nav-horizontal-item *ngIf="item.type=='item'" [item]="item"></pixsurf-nav-horizontal-item>
+          <pixsurf-nav-horizontal-collapsable *ngIf="item.type=='collapsable'" [item]="item"></pixsurf-nav-horizontal-collapsable>
+          <pixsurf-nav-horizontal-collapsable *ngIf="item.type=='group'" [item]="item"></pixsurf-nav-horizontal-collapsable>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</ng-container>

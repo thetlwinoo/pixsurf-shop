@@ -1,0 +1,37 @@
+<div class="wrap">
+  <!-- HEADER: Above -->
+  <ng-container *ngIf="pixsurfConfig.layout.header.position === 'above'">
+    <ng-container *ngTemplateOutlet="header"></ng-container>
+  </ng-container>
+  <!-- / HEADER: Above -->
+
+  <!-- CONTENT -->
+  <content></content>
+  <!-- / CONTENT -->
+
+  <!-- FOOTER: Above -->
+  <ng-container *ngIf="pixsurfConfig.layout.footer.position === 'above-fixed'">
+    <ng-container *ngTemplateOutlet="footer"></ng-container>
+  </ng-container>
+  <!-- FOOTER: Above -->
+  <a #baBackTop href="#" mat-mini-fab color="warn" class="radius scroll-top" [class.active]="visiable">
+    <mat-icon class="mat-24" aria-label="Back Top" aria-hidden="true">keyboard_arrow_up</mat-icon>
+  </a>
+</div>
+
+<!-- ----------------------------------------------------------------------------------------------------- -->
+<!-- @ PARTIALS
+      <!-- ----------------------------------------------------------------------------------------------------- -->
+
+<!-- HEADER -->
+<ng-template #header>
+  <header *ngIf="!pixsurfConfig.layout.header.hidden" [ngClass]="[pixsurfConfig.layout.header.position, pixsurfConfig.layout.header.background]">
+  </header>
+</ng-template>
+<!-- / HEADER -->
+
+<!-- FOOTER -->
+<ng-template #footer>
+  <footer *ngIf="!pixsurfConfig.layout.footer.hidden" [ngClass]="[pixsurfConfig.layout.footer.position, pixsurfConfig.layout.footer.background]"></footer>
+</ng-template>
+<!-- / FOOTER -->

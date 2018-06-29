@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
+import { ImagesPipe } from './images.pipe';
 
 @NgModule({
-    declarations: [],
+    declarations: [
+        ImagesPipe
+    ],
     imports: [],
-    exports: []
+    exports: [
+        ImagesPipe
+    ]
 })
 export class PixsurfPipesModule {
 }

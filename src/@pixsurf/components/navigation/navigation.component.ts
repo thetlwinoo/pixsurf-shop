@@ -43,12 +43,14 @@ export class PixsurfNavigationComponent implements OnInit
     {
         // Load the navigation either from the input or from the service
         this.navigation = this.navigation || this._pixsurfNavigationService.getCurrentNavigation();
-
+        
+        this._pixsurfNavigationService.setCurrentNavigation(this.navigation);
         // Subscribe to the current navigation changes
         this._pixsurfNavigationService.onNavigationChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(() => {
-                this.navigation = this._pixsurfNavigationService.getCurrentNavigation();
+                this.navigation = this._pixsurfNavigationService.getCurrentNavigation();   
+                console.log(this.navigation)             
             });
     }
 }

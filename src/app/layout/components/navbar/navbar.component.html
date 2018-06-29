@@ -1,39 +1,44 @@
 <ng-container *ngIf="layout == 'vertical'">
 
-    <div class="navbar-vertical">
+  <div class="navbar-vertical">
 
-        <div class="navbar-header">
+    <div class="navbar-header">
 
-            <div class="logo">
-                <img class="logo-icon" src="assets/images/logos/pixsurf.svg">
-                <span class="logo-text">FUSE</span>
-            </div>
+      <div class="logo">
+        <img class="logo-icon" src="assets/images/logos/pixsurf.svg">
+        <span class="logo-text">FUSE</span>
+      </div>
 
-            <button mat-icon-button class="toggle-sidebar-folded"
-                    (click)="toggleSidebarFolded()" fxHide.lt-lg>
-                <mat-icon>menu</mat-icon>
-            </button>
+      <button mat-icon-button class="toggle-sidebar-folded" (click)="toggleSidebarFolded()" fxHide.lt-lg>
+        <mat-icon>menu</mat-icon>
+      </button>
 
-            <button mat-icon-button class="toggle-sidebar-opened"
-                    (click)="toggleSidebarOpened()" fxHide.gt-md>
-                <mat-icon>arrow_back</mat-icon>
-            </button>
-
-        </div>
-
-        <div class="navbar-content" pixsurfPerfectScrollbar
-             [pixsurfPerfectScrollbarOptions]="{suppressScrollX: true}">
-            <pixsurf-navigation layout="vertical"></pixsurf-navigation>
-        </div>
+      <button mat-icon-button class="toggle-sidebar-opened" (click)="toggleSidebarOpened()" fxHide.gt-md>
+        <mat-icon>arrow_back</mat-icon>
+      </button>
 
     </div>
+
+    <div class="navbar-content" pixsurfPerfectScrollbar [pixsurfPerfectScrollbarOptions]="{suppressScrollX: true}">
+      <pixsurf-navigation layout="vertical"></pixsurf-navigation>
+    </div>
+
+  </div>
 
 </ng-container>
 
 <ng-container *ngIf="layout == 'horizontal'">
 
-    <div class="navbar-horizontal">
-        <pixsurf-navigation layout="horizontal"></pixsurf-navigation>
-    </div>
+  <div class="navbar-horizontal">
+    <pixsurf-navigation layout="horizontal"></pixsurf-navigation>
+  </div>
+
+</ng-container>
+
+<ng-container *ngIf="layout == 'custom'">
+
+  <ul class="list-cat-icon">
+    <pixsurf-navigation layout="custom" [navigation]="navigation"></pixsurf-navigation>
+  </ul>
 
 </ng-container>

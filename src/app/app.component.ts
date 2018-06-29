@@ -10,6 +10,7 @@ import { PixsurfSplashScreenService } from '@pixsurf/services/splash-screen.serv
 import { PixsurfTranslationLoaderService } from '@pixsurf/services/translation-loader.service';
 
 import { navigation } from 'app/navigation/navigation';
+import { homeNavigation } from 'app/navigation/home.navigation';
 import { locale as navigationEnglish } from 'app/navigation/i18n/en';
 import { locale as navigationMyanmar } from 'app/navigation/i18n/mm';
 
@@ -20,6 +21,7 @@ import { locale as navigationMyanmar } from 'app/navigation/i18n/mm';
 })
 export class AppComponent implements OnInit, OnDestroy {
   navigation: any;
+  homeNavigation: any;
   pixsurfConfig: any;
 
   // Private
@@ -45,9 +47,10 @@ export class AppComponent implements OnInit, OnDestroy {
   ) {
     // Get default navigation
     this.navigation = navigation;
-
+    this.homeNavigation = homeNavigation;
     // Register the navigation to the service
     this._pixsurfNavigationService.register('main', this.navigation);
+    this._pixsurfNavigationService.register('home', this.homeNavigation);
 
     // Set the main navigation as our current navigation
     this._pixsurfNavigationService.setCurrentNavigation('main');

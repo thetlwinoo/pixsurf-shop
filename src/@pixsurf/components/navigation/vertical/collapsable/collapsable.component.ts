@@ -28,11 +28,11 @@ export class PixsurfNavVerticalCollapsableComponent implements OnInit, OnDestroy
     /**
      * Constructor
      *
-     * @param {PixsurfNavigationService} _fuseNavigationService
+     * @param {PixsurfNavigationService} _pixsurfNavigationService
      * @param {Router} _router
      */
     constructor(
-        private _fuseNavigationService: PixsurfNavigationService,
+        private _pixsurfNavigationService: PixsurfNavigationService,
         private _router: Router
     ) {
         // Set the private defaults

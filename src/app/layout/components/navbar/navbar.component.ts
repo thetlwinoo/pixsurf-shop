@@ -18,8 +18,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
   @Input()
   layout;
 
+  //Navigation
+  @Input()
+  navigation;
+
   pixsurfPerfectScrollbarUpdateTimeout: any;
-  navigation: any;
+  // navigation: any;
 
   // Private
   private _pixsurfPerfectScrollbar: PixsurfPerfectScrollbarDirective;
@@ -90,7 +94,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this._pixsurfNavigationService.onNavigationChanged
       .pipe(filter(value => value !== null))
       .subscribe(() => {
-        this.navigation = this._pixsurfNavigationService.getCurrentNavigation();
+        this.navigation = this.navigation || this._pixsurfNavigationService.getCurrentNavigation();
       });
   }
 

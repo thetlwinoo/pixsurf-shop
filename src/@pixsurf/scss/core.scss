@@ -4,6 +4,9 @@
 // ngx-datatable
 // @import '~@swimlane/ngx-datatable/release/themes/material';
 
+@import '~bootstrap/scss/bootstrap';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 // Perfect scrollbar
 @import '~perfect-scrollbar/css/perfect-scrollbar';
 
@@ -20,8 +23,9 @@
 @include angular-material-theme($theme);
 
 // Partials
+@import "partials/font-awesome";
 @import "partials/reset";
-@import "partials/global";
+// @import "partials/global";
 @import "partials/icons";
 @import "partials/colors";
 @import "partials/material";
@@ -33,3 +37,12 @@
 @import "partials/scrollbars";
 // Plugins
 @import "partials/plugins/plugins";
+
+// Overrides
+@import "partials/overrides/overrides";
+
+//design1
+@import "partials/design1/color-red";
+@import "partials/design1/theme";
+@import "partials/design1/responsive";
+@import "partials/design1/browser";

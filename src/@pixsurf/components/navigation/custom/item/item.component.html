@@ -1,0 +1,9 @@
+<ng-container *ngIf="!item.hidden">
+  <a *ngIf="item.url && item.function" (click)="item.function()" [routerLink]="[item.url]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: item.exactMatch || false}">
+    <ng-container *ngTemplateOutlet="itemContent"></ng-container>
+  </a>
+
+  <ng-template #itemContent>
+    <span>{{item.title}}</span>
+  </ng-template>
+</ng-container>

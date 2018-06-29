@@ -1,0 +1,28 @@
+<ng-container *ngIf="!item.hidden">
+  <li class="has-cat-mega style1">
+    <a [routerLink]="['/pages/category',id]">
+      <img alt="" src="{{ ( data.theme.icon | baImagesFilter:'png':'caticon' ) }}">
+      <span>{{ item.title }}</span>
+    </a>
+    <div class="cat-mega-menu cat-mega-style1">
+      <div class="row">
+        <div class="col-md-10 col-sm-10">
+          <div class="row">
+            <ng-container *ngFor="let item of item.children">
+              <pixsurf-nav-vertical-group *ngIf="item.type=='group'" [item]="item"></pixsurf-nav-vertical-group>
+              <pixsurf-nav-vertical-collapsable *ngIf="item.type=='collapsable'" [item]="item"></pixsurf-nav-vertical-collapsable>
+              <pixsurf-nav-vertical-item *ngIf="item.type=='item'" [item]="item"></pixsurf-nav-vertical-item>
+            </ng-container>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-2">
+          <div class="banner-image">
+            <a [routerLink]="category.path">
+              <img alt="" src="{{ ( 'cat-mega-thumb' | baImagesFilter:'png':'home' ) }}">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ng-container>

@@ -1,4 +1,4 @@
-<div id="main-navigation" class="nav" [ngClass]="{'horizontal':layout === 'horizontal', 'vertical':layout === 'vertical'}">
+<div id="main-navigation" [ngClass]="{'nav horizontal':layout === 'horizontal', 'nav vertical':layout === 'vertical'}">
 
   <!-- Vertical Navigation Layout -->
   <ng-container *ngIf="layout === 'vertical'">
@@ -27,5 +27,15 @@
 
   </ng-container>
   <!-- / Horizontal Navigation Layout -->
+
+  <!-- Custom Navigation Layout -->
+  <ng-container *ngIf="layout === 'custom'">    
+      <ng-container *ngFor="let item of navigation">
+        <pixsurf-nav-horizontal-collapsable *ngIf="item.type=='group'" [item]="item"></pixsurf-nav-horizontal-collapsable>
+        <pixsurf-nav-horizontal-collapsable *ngIf="item.type=='collapse'" [item]="item"></pixsurf-nav-horizontal-collapsable>
+        <pixsurf-nav-horizontal-item *ngIf="item.type=='item'" [item]="item"></pixsurf-nav-horizontal-item>
+      </ng-container>
+  </ng-container>
+  <!-- / Custom Navigation Layout -->
 
 </div>

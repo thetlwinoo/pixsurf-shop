@@ -1,0 +1,1364 @@
+<div id="header" pixsurfHeader>
+  <div class="header">
+    <div class="banner-topheader">
+      <div class="container">
+        <div class="inner-top-banner">
+          <h2 class="title18 color">Trendy Travel accessories</h2>
+          <p class="desc">
+            <b>Fashion, Electronics, Sunglasses</b>
+          </p>
+          <a routerLink="." mat-raised-button color="warn" class="shopnow white text-uppercase">shop now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="toolbar-wrapper">
+      <div class="container">
+        <mat-toolbar>
+          <a routerLink="/pages/home">
+            <span>NGRXSHOP</span>
+          </a>
+          <span class="toolbar-spacer"></span>
+          <button mat-button routerLink="." tabindex="-1">
+            <span>sell on shop</span>
+          </button>
+          <button mat-button routerLink="." tabindex="-1">
+            <mat-icon>sentiment_very_satisfied</mat-icon>
+            <span>customer care</span>
+          </button>
+          <button mat-button routerLink="/pages/dashboard" tabindex="-1">
+            <span>track my order</span>
+          </button>
+          <button mat-button tabindex="-1" [matMenuTriggerFor]="myaccount" *ngIf="user;else lock">
+            <mat-icon>account_circle</mat-icon>
+            <span>{{(user).name}} 's Account</span>
+          </button>
+          <mat-menu #myaccount="matMenu">
+            <button mat-menu-item routerLink="/pages/dashboard">
+              <mat-icon>supervisor_account</mat-icon>Manage My Account</button>
+            <button mat-menu-item routerLink="/pages/dashboard">
+              <mat-icon>shopping_basket</mat-icon>My Orders</button>
+            <button mat-menu-item routerLink="/pages/dashboard">
+              <mat-icon>favorite</mat-icon>Wishlist</button>
+            <button mat-menu-item routerLink="/pages/dashboard">
+              <mat-icon>rate_review</mat-icon>My Reviews</button>
+            <button mat-menu-item routerLink="/pages/dashboard">
+              <mat-icon>cancel</mat-icon>Returns & Cancellations</button>
+            <button mat-menu-item (click)="logout()">
+              <mat-icon>exit_to_app</mat-icon>Logout</button>
+          </mat-menu>
+          <ng-template #lock>
+            <button mat-button routerLink="/pages/account" tabindex="-1">
+              <mat-icon>fingerprint</mat-icon>
+              <span>login</span>
+            </button>
+            <button mat-button routerLink="/pages/account/register" tabindex="-1">
+              <mat-icon>account_box</mat-icon>
+              <span>signup</span>
+            </button>
+          </ng-template>
+        </mat-toolbar>
+      </div>
+    </div>
+
+    <!-- End Top Header -->
+    <div class="main-header1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="logo logo1">
+              <h1 class="sr-only">Kute Shop Html Theme</h1>
+              <a routerLink="/pages/home">
+                <img src="{{ ( 'home1/logo2' | images:'png' ) }}" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="wrap-search1">
+              <form class="search-form">
+                <div class="row">
+                  <!-- <mat-form-field class="search-full-width">
+                    <input type="search" matInput placeholder="Search products...">
+                    <mat-icon matSuffix>search</mat-icon>
+                  </mat-form-field> -->
+                </div>
+              </form>
+              <div class="search-trend">
+                <span>Search trend:</span>
+                <a href="#">Fashion </a>
+                <a href="#">Mobile</a>
+                <a href="#">Smartphone</a>
+                <a href="#">Laptop</a>
+                <a href="#">Beauty</a>
+                <a href="#">Watches</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="shopping-cart-wrapper">
+              <div class="top-cart-wrapper">
+                <div class="top-cart-contain">
+                  <div class="block-cart">
+                    <div class="top-cart-title">
+                      <a color="warn" [class.disabled]="itemCount === 0 ? true : null" routerLink="/pages/checkout/cart">
+                        <h3>Shopping Cart</h3>
+                        <span>{{itemCount}} items /</span>
+                        <span *ngIf="itemsTotal" class="price">{{itemsTotal | currency:'USD':true}}</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Main Header -->
+  </div>
+  <div class="header-ontop" [ngClass]="{'fixed-ontop': showOnTop}">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 col-sm-2 col-xs-12">
+          <div class="logo">
+            <h1 class="sr-only">kuteshop wordpress theme</h1>
+            <a href="index.html">
+              <img src="{{ ( 'logo2' | images:'png':'home' ) }}" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-12">
+          <nav class="main-nav main-nav-ontop" #mainnav>
+            <ul>
+              <li class="menu-item-has-children">
+                <a href="#">Home</a>
+                <ul class="sub-menu">
+                  <li class="menu-item-has-children">
+                    <a href="#">Home 1-6</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item-preview">
+                        <a href="home-01.html">Home 1</a>
+                        <div class="preview-image">
+                          <a href="home-01.html">
+                            <img src="{{ ( '02_home_v1' | images:'jpg':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                      <li class="menu-item-preview">
+                        <a href="home-02.html">Home 2</a>
+                        <div class="preview-image">
+                          <a href="home-02.html">
+                            <img src="{{ ( '02_home_v2' | images:'jpg':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                      <li class="menu-item-preview">
+                        <a href="home-03.html">Home 3</a>
+                        <div class="preview-image">
+                          <a href="home-03.html">
+                            <img src="{{ ( '02_home_v3' | images:'jpg':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                      <li class="menu-item-preview">
+                        <a href="home-04.html">Home 4</a>
+                        <div class="preview-image">
+                          <a href="home-04.html">
+                            <img src="{{ ( '02_home_v4' | images:'jpg':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                      <li class="menu-item-preview">
+                        <a href="home-05.html">Home 5</a>
+                        <div class="preview-image">
+                          <a href="home-05.html">
+                            <img src="{{ ( '02_home_v5' | images:'jpg':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                      <li class="menu-item-preview">
+                        <a href="home-06.html">Home 6</a>
+                        <div class="preview-image">
+                          <a href="home-06.html">
+                            <img src="{{ ( '02_home_v6' | images:'jpg':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="#">Home 7-12</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item-preview">
+                        <a href="home-07.html">Home 7</a>
+                        <div class="preview-image">
+                          <a href="home-07.html">
+                            <img src="{{ ( '02_home_v7' | images:'jpg':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                      <li class="menu-item-preview">
+                        <a href="home-08.html">Home 8</a>
+                        <div class="preview-image">
+                          <a href="home-08.html">
+                            <img src="{{ ( '02_home_v8' | images:'png':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                      <li class="menu-item-preview">
+                        <a href="home-09.html">Home 9</a>
+                        <div class="preview-image">
+                          <a href="home-09.html">
+                            <img src="{{ ( '02_home_v9' | images:'png':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                      <li class="menu-item-preview">
+                        <a href="home-10.html">Home 10</a>
+                        <div class="preview-image">
+                          <a href="home-10.html">
+                            <img src="{{ ( '02_home_v10' | images:'png':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                      <li class="menu-item-preview">
+                        <a href="home-11.html">Home 11</a>
+                        <div class="preview-image">
+                          <a href="home-11.html">
+                            <img src="{{ ( '02_home_v11' | images:'png':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                      <li class="menu-item-preview">
+                        <a href="home-12.html">Home 12</a>
+                        <div class="preview-image">
+                          <a href="home-12.html">
+                            <img src="{{ ( '02_home_v12' | images:'png':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="#">Home 13-18</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item-preview">
+                        <a href="home-13.html">Home 13</a>
+                        <div class="preview-image">
+                          <a href="home-13.html">
+                            <img src="{{ ( '02_home_v13' | images:'png':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                      <li class="menu-item-preview">
+                        <a href="home-14.html">Home 14</a>
+                        <div class="preview-image">
+                          <a href="home-14.html">
+                            <img src="{{ ( '02_home_v14' | images:'png':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                      <li class="menu-item-preview">
+                        <a href="home-15.html">Home 15</a>
+                        <div class="preview-image">
+                          <a href="home-15.html">
+                            <img src="{{ ( '02_home_v15' | images:'png':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                      <li class="menu-item-preview">
+                        <a href="home-16.html">Home 16</a>
+                        <div class="preview-image">
+                          <a href="home-16.html">
+                            <img src="{{ ( '02_home_v16' | images:'png':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                      <li class="menu-item-preview">
+                        <a href="home-17.html">Home 17</a>
+                        <div class="preview-image">
+                          <a href="home-17.html">
+                            <img src="{{ ( '02_home_v17' | images:'png':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                      <li class="menu-item-preview">
+                        <a href="home-18.html">Home 18</a>
+                        <div class="preview-image">
+                          <a href="home-18.html">
+                            <img src="{{ ( '02_home_v18' | images:'png':'previews' ) }}" alt="" />
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="has-mega-menu">
+                <a href="list-boxed-banner.html">Fashion </a>
+                <div class="mega-menu">
+                  <div class="row">
+                    <div class="col-md-5 col-sm-4 col-xs-12">
+                      <div class="mega-adv">
+                        <div class="banner-image">
+                          <a href="#">
+                            <img src="{{ ( 'fashion' | images:'jpg':'megamenu' ) }}" alt="" />
+                          </a>
+                        </div>
+                        <div class="mega-adv-info">
+                          <h3 class="title18">
+                            <a href="#">Examplui coloniu tencaug</a>
+                          </h3>
+                          <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                      <div class="mega-new-arrival">
+                        <h2 class="mega-menu-title">Featured Product</h2>
+                        <div class="mega-new-arrival-slider">
+                          <div class="wrap-item" data-pagination="false" data-navigation="true" data-itemscustom="[[0,1],[768,2]]">
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'fashion/11' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'fashion/12' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'fashion/13' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'fashion/14' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Mega Menu -->
+              </li>
+              <li class="has-mega-menu">
+                <a href="list-boxed-banner.html">Beauty & Health</a>
+                <div class="mega-menu">
+                  <div class="row">
+                    <div class="col-md-5 col-sm-4 col-xs-12">
+                      <div class="mega-adv">
+                        <div class="banner-image">
+                          <a href="#">
+                            <img src="{{ ( 'beauty' | images:'jpg':'megamenu' ) }}" alt="" />
+                          </a>
+                        </div>
+                        <div class="mega-adv-info">
+                          <h3 class="title18">
+                            <a href="#">Examplui coloniu tencaug</a>
+                          </h3>
+                          <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                      <div class="mega-new-arrival">
+                        <h2 class="mega-menu-title">Featured Product</h2>
+                        <div class="mega-new-arrival-slider">
+                          <div class="wrap-item" data-pagination="false" data-navigation="true" data-itemscustom="[[0,1],[768,2]]">
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'beauty/11' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'beauty/12' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'beauty/13' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'beauty/14' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Mega Menu -->
+              </li>
+              <li class="has-mega-menu">
+                <a href="list-boxed-banner.html">Electronics </a>
+                <div class="mega-menu">
+                  <div class="row">
+                    <div class="col-md-5 col-sm-4 col-xs-12">
+                      <div class="mega-adv">
+                        <div class="banner-image">
+                          <a href="#">
+                            <img src="{{ ( 'electronics' | images:'jpg':'megamenu' ) }}" alt="" />
+                          </a>
+                        </div>
+                        <div class="mega-adv-info">
+                          <h3 class="title18">
+                            <a href="#">Examplui coloniu tencaug</a>
+                          </h3>
+                          <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                      <div class="mega-new-arrival">
+                        <h2 class="mega-menu-title">Featured Product</h2>
+                        <div class="mega-new-arrival-slider">
+                          <div class="wrap-item" data-pagination="false" data-navigation="true" data-itemscustom="[[0,1],[768,2]]">
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'electronics/11' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'electronics/12' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'electronics/13' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'electronics/14' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Mega Menu -->
+              </li>
+              <li class="has-mega-menu">
+                <a href="list-boxed-banner.html">Homeware</a>
+                <div class="mega-menu">
+                  <div class="row">
+                    <div class="col-md-5 col-sm-4 col-xs-12">
+                      <div class="mega-adv">
+                        <div class="banner-image">
+                          <a href="#">
+                            <img src="{{ ( 'homeware' | images:'jpg':'megamenu' ) }}" alt="" />
+                          </a>
+                        </div>
+                        <div class="mega-adv-info">
+                          <h3 class="title18">
+                            <a href="#">Examplui coloniu tencaug</a>
+                          </h3>
+                          <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                      <div class="mega-new-arrival">
+                        <h2 class="mega-menu-title">Featured Product</h2>
+                        <div class="mega-new-arrival-slider">
+                          <div class="wrap-item" data-pagination="false" data-navigation="true" data-itemscustom="[[0,1],[768,2]]">
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'homeware/11' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'homeware/12' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'homeware/13' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'homeware/14' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Mega Menu -->
+              </li>
+              <li class="has-mega-menu">
+                <a href="list-boxed-banner.html">Sport </a>
+                <div class="mega-menu">
+                  <div class="row">
+                    <div class="col-md-5 col-sm-4 col-xs-12">
+                      <div class="mega-adv">
+                        <div class="banner-image">
+                          <a href="#">
+                            <img src="{{ ( 'sport' | images:'jpg':'megamenu' ) }}" alt="" />
+                          </a>
+                        </div>
+                        <div class="mega-adv-info">
+                          <h3 class="title18">
+                            <a href="#">Examplui coloniu tencaug</a>
+                          </h3>
+                          <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-7 col-sm-8 col-xs-12">
+                      <div class="mega-new-arrival">
+                        <h2 class="mega-menu-title">Featured Product</h2>
+                        <div class="mega-new-arrival-slider">
+                          <div class="wrap-item" data-pagination="false" data-navigation="true" data-itemscustom="[[0,1],[768,2]]">
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'sport/11' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'sport/12' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'sport/13' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="item-product-ajax item-product">
+                                <div class="product-thumb">
+                                  <a href="detail.html" class="product-thumb-link">
+                                    <img src="{{ ( 'sport/14' | images:'jpg':'photos' ) }}" alt="">
+                                  </a>
+                                  <a href="quick-view.html" class="quickview-link plus fancybox.iframe">quick view</a>
+                                  <div class="product-extra-link">
+                                    <a href="#" class="addcart-link">
+                                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="wishlist-link">
+                                      <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" class="compare-link">
+                                      <i class="fa fa-refresh" aria-hidden="true"></i>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="product-info">
+                                  <h3 class="product-title">
+                                    <a href="detail.html">new favorite</a>
+                                  </h3>
+                                  <div class="product-price">
+                                    <del>
+                                      <span>$400.00</span>
+                                    </del>
+                                    <ins>
+                                      <span>$360.00</span>
+                                    </ins>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Mega Menu -->
+              </li>
+              <li class="menu-item-has-children">
+                <a href="#">pages</a>
+                <ul class="sub-menu">
+                  <li class="menu-item-has-children">
+                    <a href="grid-boxed-banner.html">shop</a>
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="grid-ajax-infinite-scroll.html">Grid Ajax Infinite Scroll</a>
+                      </li>
+                      <li>
+                        <a href="grid-boxed-banner.html">Grid Boxed Banner</a>
+                      </li>
+                      <li>
+                        <a href="grid-boxed-slider-banner.html">Grid Boxed Slider Banner</a>
+                      </li>
+                      <li>
+                        <a href="grid-full-width-banner.html">Grid Full Width Banner</a>
+                      </li>
+                      <li>
+                        <a href="list-boxed-banner.html">List Boxed Banner</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="product-page-with-accordion.html">Product</a>
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="product-bundle-sample.html">Product Bundle Sample</a>
+                      </li>
+                      <li>
+                        <a href="product-configurable-sample.html">Product Configurable Sample</a>
+                      </li>
+                      <li>
+                        <a href="product-grouped-sample.html">Product Grouped Sample</a>
+                      </li>
+                      <li>
+                        <a href="product-page-with-accordion.html">Product Page With Accordion</a>
+                      </li>
+                      <li>
+                        <a href="product-page-without-sidebar.html">Product Page With Sidebar</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="blog-small-image.html">Blog</a>
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="blog-large-image.html">Blog Large Image</a>
+                      </li>
+                      <li>
+                        <a href="blog-masonry.html">Blog Masonry</a>
+                      </li>
+                      <li>
+                        <a href="blog-small-image.html">Blog Small Image</a>
+                      </li>
+                      <li>
+                        <a href="single-fullwidth.html">Single Full Width</a>
+                      </li>
+                      <li>
+                        <a href="single-with-sidebar.html">Single With Sidebar</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="about.html">about</a>
+                  </li>
+                  <li>
+                    <a href="contact.html">contact</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <!-- End Main Nav -->
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-12">
+          <div class="check-cart check-cart-ontop">
+            <div class="checkout-box">
+              <a href="#" class="checkout-link">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+              </a>
+              <ul class="list-checkout list-unstyled">
+                <li>
+                  <a href="#">
+                    <i class="fa fa-user"></i> Account Info</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-heart-o"></i> Wish List</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-toggle-on"></i> Compare</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-key" aria-hidden="true"></i>Sign in</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-sign-in"></i> Checkout</a>
+                </li>
+              </ul>
+            </div>
+            <!-- End Check Out Box -->
+            <div class="search-hover-box">
+              <a href="#" class="search-hover-link">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </a>
+              <form class="search-form-hover">
+                <input onblur="if (this.value=='') this.value = this.defaultValue" onfocus="if (this.value==this.defaultValue) this.value = ''"
+                  value="Search..." type="text">
+                <input value="" type="hidden">
+              </form>
+            </div>
+            <!-- End Wishlist -->
+            <div class="mini-cart-box">
+              <a class="mini-cart-link" href="cart.html">
+                <span class="mini-cart-icon">
+                  <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                </span>
+                <span class="mini-cart-number">0</span>
+              </a>
+              <div class="mini-cart-content">
+                <h2>(2) ITEMS IN MY CART</h2>
+                <ul class="list-mini-cart-item list-unstyled">
+                  <li>
+                    <div class="mini-cart-edit">
+                      <a class="delete-mini-cart-item" href="#">
+                        <i class="fa fa-trash-o"></i>
+                      </a>
+                      <a class="edit-mini-cart-item" href="#">
+                        <i class="fa fa-pencil"></i>
+                      </a>
+                    </div>
+                    <div class="mini-cart-thumb">
+                      <a href="#">
+                        <img alt="" src="{{ ( 'mini-cart-thumb' | images:'png':'home' ) }}">
+                      </a>
+                    </div>
+                    <div class="mini-cart-info">
+                      <h3>
+                        <a href="#">Burberry Pink &amp; black</a>
+                      </h3>
+                      <div class="info-price">
+                        <span>$59.52</span>
+                        <del>$17.96</del>
+                      </div>
+                      <div class="qty-product">
+                        <span class="qty-down">-</span>
+                        <span class="qty-num">1</span>
+                        <span class="qty-up">+</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="mini-cart-edit">
+                      <a class="delete-mini-cart-item" href="#">
+                        <i class="fa fa-trash-o"></i>
+                      </a>
+                      <a class="edit-mini-cart-item" href="#">
+                        <i class="fa fa-pencil"></i>
+                      </a>
+                    </div>
+                    <div class="mini-cart-thumb">
+                      <a href="#">
+                        <img alt="" src="{{ ( 'mini-cart-thumb' | images:'png':'home' ) }}">
+                      </a>
+                    </div>
+                    <div class="mini-cart-info">
+                      <h3>
+                        <a href="#">Burberry Pink &amp; black</a>
+                      </h3>
+                      <div class="info-price">
+                        <span>$59.52</span>
+                        <del>$17.96</del>
+                      </div>
+                      <div class="qty-product">
+                        <span class="qty-down">-</span>
+                        <span class="qty-num">1</span>
+                        <span class="qty-up">+</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="mini-cart-total">
+                  <label>TOTAL</label>
+                  <span>$24.28</span>
+                </div>
+                <div class="mini-cart-button">
+                  <a class="mini-cart-view" href="#">view my cart </a>
+                  <a class="mini-cart-checkout" href="#">Checkout</a>
+                </div>
+              </div>
+            </div>
+            <!-- End Mini Cart -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Header On Top -->
+</div>
