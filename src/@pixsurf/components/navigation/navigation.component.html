@@ -31,9 +31,9 @@
   <!-- Custom Navigation Layout -->
   <ng-container *ngIf="layout === 'custom'">    
       <ng-container *ngFor="let item of navigation">
-        <pixsurf-nav-horizontal-collapsable *ngIf="item.type=='group'" [item]="item"></pixsurf-nav-horizontal-collapsable>
-        <pixsurf-nav-horizontal-collapsable *ngIf="item.type=='collapse'" [item]="item"></pixsurf-nav-horizontal-collapsable>
-        <pixsurf-nav-horizontal-item *ngIf="item.type=='item'" [item]="item"></pixsurf-nav-horizontal-item>
+        <pixsurf-nav-custom-collapsable *ngIf="item.type=='group'" [item]="item"></pixsurf-nav-custom-collapsable>
+        <pixsurf-nav-custom-collapsable *ngIf="item.type=='collapse'" [item]="item"></pixsurf-nav-custom-collapsable>
+        <pixsurf-nav-custom-item *ngIf="item.type=='item'" [item]="item"></pixsurf-nav-custom-item>
       </ng-container>
   </ng-container>
   <!-- / Custom Navigation Layout -->

@@ -1,0 +1,17 @@
+<owl-carousel #owlElement class="wrap-item" [options]="options" [items]="images" [carouselClasses]="['owl-theme']">
+  <div class="item" *ngFor="let slide of slides;let i = index">
+    <div class="item-banner item-banner1">
+      <div class="banner-thumb">
+        <a href="#">
+          <img [ngStyle]="options.style" src="{{ ( slide.image | images:'jpg':'home' ) }}" alt="">
+        </a>
+      </div>
+      <div class="banner-info animated" [attr.data-animated]="slide.transition">
+        <h2 class="title30" innerHTML="{{slide.header}}"></h2>
+        <h2 class="title30 color" innerHTML="{{slide.deal}}"></h2>
+        <p innerHTML="{{slide.text}}"></p>
+        <a href="#" class="shopnow" innerHTML="{{slide.button}}"></a>
+      </div>
+    </div>
+  </div>
+</owl-carousel>

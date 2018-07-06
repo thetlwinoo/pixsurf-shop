@@ -26,5 +26,6 @@ export const pixsurfConfig: PixsurfConfig = {
             background: 'mat-pixsurf-dark-900-bg'
         }
     },
-    customScrollbars: true
+    customScrollbars: true,
+    owlCarousel: true
 };

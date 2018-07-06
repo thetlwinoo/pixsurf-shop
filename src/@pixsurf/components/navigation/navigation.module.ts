@@ -11,6 +11,10 @@ import { PixsurfNavVerticalCollapsableComponent } from './vertical/collapsable/c
 import { PixsurfNavVerticalGroupComponent } from './vertical/group/group.component';
 import { PixsurfNavHorizontalItemComponent } from './horizontal/item/item.component';
 import { PixsurfNavHorizontalCollapsableComponent } from './horizontal/collapsable/collapsable.component';
+import { PixsurfNavCustomItemComponent } from './custom/item/item.component';
+import { PixsurfNavCustomCollapsableComponent } from './custom/collapsable/collapsable.component';
+import { PixsurfNavCustomGroupComponent } from './custom/group/group.component';
+import { PixsurfPipesModule } from '@Pixsurf/pipes/pipes.module';
 
 @NgModule({
     imports     : [
@@ -19,7 +23,7 @@ import { PixsurfNavHorizontalCollapsableComponent } from './horizontal/collapsab
 
         MatIconModule,
         MatRippleModule,
-
+        PixsurfPipesModule,
         TranslateModule.forChild()
     ],
     exports     : [
@@ -31,7 +35,10 @@ import { PixsurfNavHorizontalCollapsableComponent } from './horizontal/collapsab
         PixsurfNavVerticalItemComponent,
         PixsurfNavVerticalCollapsableComponent,
         PixsurfNavHorizontalItemComponent,
-        PixsurfNavHorizontalCollapsableComponent
+        PixsurfNavHorizontalCollapsableComponent,
+        PixsurfNavCustomGroupComponent,
+        PixsurfNavCustomCollapsableComponent,
+        PixsurfNavCustomItemComponent
     ]
 })
 export class PixsurfNavigationModule

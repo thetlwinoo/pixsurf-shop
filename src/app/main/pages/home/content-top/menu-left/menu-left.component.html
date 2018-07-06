@@ -1,0 +1,31 @@
+<li class="has-cat-mega style1">
+  <a [routerLink]="['/pages/category',category.id]">
+    <img alt="" src="{{ ( data.theme.icon | images:'png':'caticon' ) }}">
+    <span>{{ category.title }}</span>
+  </a>
+  <div class="cat-mega-menu cat-mega-style1">
+    <div class="row">
+      <div class="col-md-10 col-sm-10">
+        <div class="row">
+          <div *ngFor="let _subcag of category.children" class="col-md-4 col-sm-3">
+            <div class="list-cat-mega-menu" *ngIf="_subcag.children">
+              <h2 class="title-cat-mega-menu">{{ _subcag.title }}</h2>
+              <ul>
+                <li *ngFor="let _classification of _subcag.children">
+                  <a [routerLink]="_classification.path">{{_classification.title}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-2">
+        <div class="banner-image">
+          <a [routerLink]="category.path">
+            <img alt="" src="{{ ( 'cat-mega-thumb' | images:'png':'home' ) }}">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>

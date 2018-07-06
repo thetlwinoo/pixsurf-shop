@@ -26,4 +26,5 @@ export interface PixsurfConfig
         }
     };
     customScrollbars: boolean;
+    owlCarousel: boolean;
 }

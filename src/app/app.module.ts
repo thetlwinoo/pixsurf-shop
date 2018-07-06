@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatButtonModule, MatIconModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import 'hammerjs';
 
 import { PixsurfModule } from '@pixsurf/pixsurf.module';
@@ -14,17 +15,19 @@ import { PixsurfSidebarModule } from '@pixsurf/components';
 
 import { pixsurfConfig } from 'app/pixsurf-config';
 
+import { FakeDbService } from 'app/fake-db/fake-db.service';
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
+// import 'bootstrap';
 
 const appRoutes: Routes = [
   {
-      path        : 'pages',
-      loadChildren: './main/pages/pages.module#PagesModule'
+    path: 'pages',
+    loadChildren: './main/pages/pages.module#PagesModule'
   },
   {
-      path      : '**',
-      redirectTo: 'pages/home'
+    path: '**',
+    redirectTo: 'pages/home'
   }
 ];
 
@@ -39,7 +42,10 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
 
     TranslateModule.forRoot(),
-
+    InMemoryWebApiModule.forRoot(FakeDbService, {
+      delay: 0,
+      passThruUnknownUrl: true
+    }),
     // Material moment date module
     MatMomentDateModule,
 

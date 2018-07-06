@@ -7,6 +7,7 @@ import { PixsurfNavigationService } from '@pixsurf/components/navigation/navigat
 import { PixsurfSidebarService } from '@pixsurf/components/sidebar/sidebar.service';
 import { PixsurfSplashScreenService } from '@pixsurf/services/splash-screen.service';
 import { PixsurfTranslationLoaderService } from '@pixsurf/services/translation-loader.service';
+import { Feathers } from '@pixsurf/services/feathers.service';
 
 @NgModule({
     entryComponents: [],
@@ -17,7 +18,8 @@ import { PixsurfTranslationLoaderService } from '@pixsurf/services/translation-l
         PixsurfNavigationService,
         PixsurfSidebarService,
         PixsurfSplashScreenService,
-        PixsurfTranslationLoaderService
+        PixsurfTranslationLoaderService,
+        Feathers
     ]
 })
 export class PixsurfModule {

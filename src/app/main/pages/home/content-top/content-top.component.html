@@ -1,20 +1,26 @@
 <div class="content-top1">
-    <div class="row">
-      <div class="col-md-3 hidden-sm hidden-xs-down">
-        <div class="wrap-cat-icon wrap-cat-icon1">
-          <h2 class="title14 title-cat-icon">Categories</h2>
-          <navbar layout="custom" navigation="home"></navbar>
-        </div>
+  <div class="row">
+    <div class="col-md-3 hidden-sm hidden-xs-down">
+      <div class="wrap-cat-icon wrap-cat-icon1">
+        <h2 class="title14 title-cat-icon">Categories</h2>
+        <ul class="list-cat-icon">
+          <div class="loading-backdrop" [class.loading-shown]="loading">
+            <!-- <mat-spinner [diameter]=30 [strokeWidth]=2 [class.show]="loading"></mat-spinner> -->
+          </div>
+          <menu-left class="cat-menu-item" [category]="category" *ngFor="let category of categories | slice:0:10"></menu-left>
+        </ul>
       </div>
-      <div class="col-md-9 col-sm-12 col-xs-12">
-        <div class="wrap-banner-slider1">
-          <div class="banner-slider banner-slider1">
-            <!-- <owl-carousel #owlElement class="wrap-item" [options]="_contentTop.options.main" [items]="images" [carouselClasses]="['owl-theme']">
-              <div class="item" *ngFor="let _Slider of _contentTop.slides;let i = index">
+    </div>
+    <div class="col-md-9 col-sm-12 col-xs-12">
+      <div class="wrap-banner-slider1">
+        <div class="banner-slider banner-slider1">
+          <!-- <pixsurf-owl-carousel [options]="carousel.options.main" [slides]="carousel.slides" layout="layout1"></pixsurf-owl-carousel> -->
+          <owl-carousel #owlElement class="wrap-item" [options]="carousel.options.main" [items]="images" [carouselClasses]="['owl-theme']">
+              <div class="item" *ngFor="let _Slider of carousel.slides;let i = index">
                 <div class="item-banner item-banner1">
                   <div class="banner-thumb">
                     <a href="#">
-                      <img [ngStyle]="_contentTop.options.style" src="{{ ( _Slider.image | baImagesFilter:'jpg':'home' ) }}" alt="">
+                      <img [ngStyle]="carousel.options.style" src="{{ ( _Slider.image | images:'jpg':'home' ) }}" alt="">
                     </a>
                   </div>
                   <div class="banner-info animated" [attr.data-animated]="_Slider.transition">
@@ -25,15 +31,15 @@
                   </div>
                 </div>
               </div>
-            </owl-carousel> -->
-          </div>
-          <div class="sub-banner-slider">
-            <!-- <owl-carousel #owlElement class="wrap-item" [options]="_contentTop.options.sub" [items]="images" [carouselClasses]="['owl-theme']">
+            </owl-carousel>
+        </div>
+        <div class="sub-banner-slider">
+          <!-- <owl-carousel #owlElement class="wrap-item" [options]="_contentTop.options.sub" [items]="images" [carouselClasses]="['owl-theme']">
               <div *ngFor="let _Product of _contentTop.children;let i = index">
                 <div class="item-sub-banner">
                   <div class="product-thumb">
                     <a [routerLink]="_Product.route.paths">
-                      <img class="hvr-wobble-horizontal" src="{{ ( _Product.image | baImagesFilter:'png':'home' ) }}" alt="" />
+                      <img class="hvr-wobble-horizontal" src="{{ ( _Product.image | ImagesPipe:'png':'home' ) }}" alt="" />
                     </a>
                   </div>
                   <div class="product-info">
@@ -45,8 +51,8 @@
                 </div>
               </div>
             </owl-carousel> -->
-          </div>
         </div>
       </div>
     </div>
   </div>
+</div>

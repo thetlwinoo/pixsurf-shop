@@ -1,0 +1,17 @@
+<div id="pixsurf-owl-carousel">
+    <ng-container *ngIf="layout === 'layout1'">
+        <ng-container *ngTemplateOutlet="layout1"></ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="layout === 'layout2'">
+        <ng-container *ngTemplateOutlet="layout2"></ng-container>
+    </ng-container>
+</div>
+
+<ng-template #layout1>
+    <layout1 [options]="options" [slides]="slides"></layout1>
+</ng-template>
+
+<ng-template #layout2>
+    <!-- <layout2 [options]="options" [slides]="slides"></layout2> -->
+</ng-template>

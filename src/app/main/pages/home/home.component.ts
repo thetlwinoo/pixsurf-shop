@@ -3,13 +3,8 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { HomeService } from './home.service';
 
-import 'rxjs/add/operator/startWith';
-import 'rxjs/add/observable/merge';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/observable/fromEvent';
-import { Observable, Subscription, BehaviorSubject } from 'rxjs';
+// import { merge,map,debounceTime,distinctUntilChanged, startWith } from 'rxjs/operators'
+import { Observable, Subscription, BehaviorSubject, fromEvent } from 'rxjs';
 
 @Component({
   selector: 'pixsurf-home',
@@ -29,6 +24,7 @@ export class HomeComponent implements OnInit {
     this.onCategoriesChangedSubscription =
       this.homeService.onCategoriesChanged.subscribe(categories => {
         this.categories = categories;
+        console.log(this.categories)
       });
 
     this._unsubscribeAll = new Subject();

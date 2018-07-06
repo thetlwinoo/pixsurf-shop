@@ -50,6 +50,8 @@ Author URI: https://7uptheme.com/
 /*Color*/
 /*Attribute*/
 body {
+  font-size: 14px;
+  font-family: mat-font-family($config);
 	line-height: inherit;
   margin: 0;
   padding: 0;

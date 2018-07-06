@@ -24,13 +24,13 @@
 
 // Partials
 @import "partials/font-awesome";
-@import "partials/reset";
+// @import "partials/reset";
 // @import "partials/global";
 @import "partials/icons";
 @import "partials/colors";
 @import "partials/material";
 @import "partials/angular-material-fix";
-@import "partials/typography";
+// @import "partials/typography";
 @import "partials/toolbar";
 @import "partials/navigation";
 @import "partials/page-layouts";
@@ -42,7 +42,8 @@
 @import "partials/overrides/overrides";
 
 //design1
+@import "partials/design1/browser";
 @import "partials/design1/color-red";
 @import "partials/design1/theme";
 @import "partials/design1/responsive";
-@import "partials/design1/browser";
+

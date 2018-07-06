@@ -1,7 +1,7 @@
 <ng-container *ngIf="!item.hidden">
   <li class="has-cat-mega style1">
     <a [routerLink]="['/pages/category',id]">
-      <img alt="" src="{{ ( data.theme.icon | baImagesFilter:'png':'caticon' ) }}">
+      <img alt="" src="{{ ( data.theme.icon | images:'png':'caticon' ) }}">
       <span>{{ item.title }}</span>
     </a>
     <div class="cat-mega-menu cat-mega-style1">
@@ -18,7 +18,7 @@
         <div class="col-md-2 col-sm-2">
           <div class="banner-image">
             <a [routerLink]="category.path">
-              <img alt="" src="{{ ( 'cat-mega-thumb' | baImagesFilter:'png':'home' ) }}">
+              <img alt="" src="{{ ( 'cat-mega-thumb' | images:'png':'home' ) }}">
             </a>
           </div>
         </div>
