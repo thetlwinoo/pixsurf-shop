@@ -51,7 +51,7 @@ a:hover {
     color: #ff3e3e;
 }
 
-.owl-theme .owl-nav div:hover {
+.owl-theme .owl-nav button:hover {
     background: #ff3e3e;
 }
 
@@ -295,7 +295,7 @@ a:hover {
     background-color: #ff3e3e;
 }
 
-.sub-banner-slider .owl-theme .owl-nav div:hover {
+.sub-banner-slider .owl-theme .owl-nav button:hover {
     background: 0 0;
     color: #ff3e3e;
 }
@@ -359,7 +359,7 @@ a:hover {
     color: #ff3e3e;
 }
 
-.hotcat-slider2 .owl-theme .owl-nav div:hover {
+.hotcat-slider2 .owl-theme .owl-nav button:hover {
     background-color: #ff3e3e;
 }
 
@@ -382,7 +382,7 @@ a:hover {
     background-color: #ff3e3e;
 }
 
-.arrow-style3 .owl-theme .owl-nav div:hover {
+.arrow-style3 .owl-theme .owl-nav button:hover {
     color: #fff;
     background-color: #ff3e3e;
     border-color: #ff3e3e;
@@ -440,7 +440,7 @@ a:hover {
     background-color: #ff3e3e;
 }
 
-.product-tab5 .owl-theme .owl-nav div:hover {
+.product-tab5 .owl-theme .owl-nav button:hover {
     color: #ff3e3e;
 }
 
@@ -499,7 +499,7 @@ a:hover {
     border-top: 2px solid #ff3e3e;
 }
 
-.latest-slider6 .owl-theme .owl-nav div:hover {
+.latest-slider6 .owl-theme .owl-nav button:hover {
     color: #fff;
     background-color: #ff3e3e;
 }
@@ -543,7 +543,7 @@ a:hover {
     color: #ff3e3e;
 }
 
-.banner-slider8 .owl-theme .owl-nav div:hover {
+.banner-slider8 .owl-theme .owl-nav button:hover {
     background-color: #ff3e3e;
     color: #fff;
 }
@@ -557,7 +557,7 @@ a:hover {
     color: #ff3e3e;
 }
 
-.product-slider8 .owl-theme .owl-nav div:hover {
+.product-slider8 .owl-theme .owl-nav button:hover {
     background-color: #ff3e3e;
     color: #fff;
     border-color: #ff3e3e;
@@ -688,7 +688,7 @@ a:hover {
     background-color: #ff3e3e;
 }
 
-.bestsale-slider11 .owl-theme .owl-nav div:hover,
+.bestsale-slider11 .owl-theme .owl-nav button:hover,
 .title-box11 .list-none li:hover a {
     color: #ff3e3e;
 }
@@ -732,7 +732,7 @@ a:hover {
 }
 
 .list-coupon li a span,
-.top-review11 .owl-theme .owl-nav div:hover {
+.top-review11 .owl-theme .owl-nav button:hover {
     color: #ff3e3e;
 }
 
@@ -796,13 +796,13 @@ a:hover {
 }
 
 .pro-deal14 .product-extra-link > a:hover,
-.prodeal-slider14 .owl-theme .owl-nav div:hover,
+.prodeal-slider14 .owl-theme .owl-nav button:hover,
 .product-extra-link6 > a {
     color: #ff3e3e;
 }
 
 .banner-adv14 .banner-info .shopnow:hover,
-.banner-slider15 .owl-theme .owl-nav div:hover,
+.banner-slider15 .owl-theme .owl-nav button:hover,
 .product-extra-link6 > a:hover {
     background: #ff3e3e;
 }
@@ -811,7 +811,7 @@ a:hover {
     background-color: rgba(255, 62, 62, 0.9);
 }
 
-.blog-slider15 .owl-theme .owl-nav div:hover {
+.blog-slider15 .owl-theme .owl-nav button:hover {
     background: #ff3e3e;
 }
 
@@ -912,31 +912,31 @@ a:hover {
     background: rgba(255, 62, 62, 0.9);
 }
 
-.poly-slider .owl-theme .owl-nav div {
+.poly-slider .owl-theme .owl-nav button {
     background-color: rgba(255, 62, 62, 0.7);
 }
 
-.poly-slider .owl-theme .owl-nav div:hover {
+.poly-slider .owl-theme .owl-nav button:hover {
     background-color: #ff3e3e;
 }
 
-.poly-slider .owl-theme .owl-nav div.owl-prev::after,
-.poly-slider .owl-theme .owl-nav div.owl-prev::before {
+.poly-slider .owl-theme .owl-nav .owl-prev::after,
+.poly-slider .owl-theme .owl-nav .owl-prev::before {
     border-left: 20px solid rgba(255, 62, 62, 0.7);
 }
 
-.poly-slider .owl-theme .owl-nav div.owl-next::after,
-.poly-slider .owl-theme .owl-nav div.owl-next::before {
+.poly-slider .owl-theme .owl-nav .owl-next::after,
+.poly-slider .owl-theme .owl-nav .owl-next::before {
     border-right: 20px solid rgba(255, 62, 62, 0.7);
 }
 
-.poly-slider .owl-theme .owl-nav div.owl-prev:hover::after,
-.poly-slider .owl-theme .owl-nav div.owl-prev:hover::before {
+.poly-slider .owl-theme .owl-nav .owl-prev:hover::after,
+.poly-slider .owl-theme .owl-nav .owl-prev:hover::before {
     border-left: 20px solid #ff3e3e;
 }
 
-.poly-slider .owl-theme .owl-nav div.owl-next:hover::after,
-.poly-slider .owl-theme .owl-nav div.owl-next:hover::before {
+.poly-slider .owl-theme .owl-nav .owl-next:hover::after,
+.poly-slider .owl-theme .owl-nav .owl-next:hover::before {
     border-right: 20px solid #ff3e3e;
 }
 

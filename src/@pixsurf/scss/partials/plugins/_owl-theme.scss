@@ -3,14 +3,14 @@
 *	v1.3.3
 */
 
-.owl-theme .owl-controls{
-	margin-top: 10px;
+.owl-theme .owl-nav{
+	// margin-top: 10px;
 	text-align: center;
 }
 
 /* Styling Next and Prev buttons */
 
-.owl-theme .owl-controls .owl-buttons div{
+.owl-theme .owl-nav button{
 	color: #FFF;
 	display: inline-block;
 	zoom: 1;
@@ -27,7 +27,7 @@
 }
 /* Clickable class fix problem with hover on touch devices */
 /* Use it for non-touch hover action */
-.owl-theme .owl-controls.clickable .owl-buttons div:hover{
+.owl-theme .owl-nav.clickable button:hover{
 	filter: Alpha(Opacity=100);/*IE7 fix*/
 	opacity: 1;
 	text-decoration: none;

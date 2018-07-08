@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { carousel } from './carousel';
+import { carousel } from './content-top.carousel';
 import * as $ from 'jquery';
 
 @Component({
@@ -17,6 +17,8 @@ export class ContentTopComponent implements OnInit {
     this.carouselOptions = { "onTranslated": this.animated };
     Object.assign(carousel.options.main, this.carouselOptions);
     this.carousel = carousel;
+
+    console.log(this.carousel);
   }
 
   ngOnInit() {
